@@ -3,80 +3,168 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TÌM HIỂU TRỰC TUYẾN PHÁP LUẬT VỀ AN TOÀN GIAO THÔNG</title>
+    <title>CUỘC THI TÌM HIỂU TRỰC TUYẾN PHÁP LUẬT VỀ AN TOÀN GIAO THÔNG</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
             margin: 0;
-            padding: 20px;
-        }
-        h1 {
-            text-align: center;
-        }
-        .container {
-            max-width: 800px;
-            margin: auto;
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 0;
+            background-color: #f4f4f4;
         }
         .banner {
-            text-align: center;
+            width: 100%;
+            max-height: 300px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
             margin-bottom: 20px;
         }
         .banner img {
-            max-width: 100%;
-            border-radius: 8px;
+            width: 100%;
+            height: auto;
         }
-        .test-section {
-            margin-bottom: 30px;
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            text-align: center;
         }
-        .bulletin-board {
-            background: #f8f8f8;
-            padding: 15px;
-            border-radius: 8px;
+        h1 {
+            color: #333;
         }
-        .bulletin-board h2 {
-            margin-top: 0;
+        .instructions {
+            margin: 20px;
+            text-align: left;
+            font-size: 16px;
         }
-        .student-list {
-            list-style-type: none;
-            padding: 0;
+        .test-link {
+            margin: 20px 0;
         }
-        .student-list li {
-            background: #e0e0e0;
-            margin-bottom: 5px;
+        .test-link a {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 5px;
+        }
+        .test-link a:hover {
+            background-color: #45a049;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
             padding: 10px;
-            border-radius: 4px;
+            text-align: left;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
         }
     </style>
 </head>
 <body>
+
+    <!-- Banner Image -->
+    <div class="banner">
+        <img src="banner.png" alt="Banner Image">
+    </div>
+
     <div class="container">
-        <div class="banner">
-            <img src="banner.png" alt="Banner Image">
-        </div>
-        
+        <!-- Page Title -->
         <h1>CUỘC THI TÌM HIỂU TRỰC TUYẾN PHÁP LUẬT VỀ AN TOÀN GIAO THÔNG</h1>
-        
-        <div class="test-section">
-            <h2>THAM GIA THI</h2>
-            <p>BẤM VÀO LINK BÊN DƯỚI ĐỂ THAM GIA CUỘC THI TUẦN 1:</p>
-            <a href="YOUR_GOOGLE_FORM_LINK" target="_blank">Take the Test</a>
+
+        <!-- Instructions Section -->
+        <div class="instructions">
+            <h3>HƯỚNG DẪN THAM GIA CUỘC THI</h3>
+            <p>1. Học sinh bấm vào nút "Tham gia thi tuần 1" hoặc "Tham gia thi tuần 2" để dự thi.</p>
+            <p>2. Nút tham gia thi sẽ dẫn đến một bài kiểm tra trên Google Form. Học sinh thực hiện 40 câu hỏi và bấm nút nộp bài.</p>
+            <p>3. Kết quả sẽ được tổng hợp tự động. 10 học sinh có điểm số cao nhất sẽ được cập nhật trên web vào 7h sáng mỗi ngày.</p>
         </div>
-        
-        <div class="bulletin-board">
-            <h2>BẢNG XẾP HẠNG</h2>
-            <ul class="student-list" id="studentList">
-                <!-- Student names with top grades will be displayed here -->
-            </ul>
+
+        <!-- Google Form Links -->
+        <div class="test-link">
+            <a href="https://docs.google.com/forms/d/1pLTZeNrgI5SV5EdcebGSzwsc1Ogbr1EehrbmrfviWmk/edit" target="_blank">Tham gia thi tuần 1</a>
+            <a href="https://docs.google.com/forms/d/YOUR_FORM_ID_2/viewform" target="_blank">Tham gia thi tuần 2</a>
         </div>
+
+        <!-- Top 10 Students Table for Week 1 -->
+        <h2>10 HỌC SINH CÓ ĐIỂM SỐ CAO NHẤT TUẦN 1</h2>
+        <table id="top-students-week1">
+            <thead>
+                <tr>
+                    <th>Hạng</th>
+                    <th>Họ và tên học sinh</th>
+                    <th>Lớp</th>
+                    <th>Điểm số</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Table content will be populated by JavaScript -->
+            </tbody>
+        </table>
+
+        <!-- Top 10 Students Table for Week 2 -->
+        <h2>10 HỌC SINH CÓ ĐIỂM SỐ CAO NHẤT TUẦN 2</h2>
+        <table id="top-students-week2">
+            <thead>
+                <tr>
+                    <th>Hạng</th>
+                    <th>Họ và tên học sinh</th>
+                    <th>Lớp</th>
+                    <th>Điểm số</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Table content will be populated by JavaScript -->
+            </tbody>
+        </table>
     </div>
 
     <script>
-        // This section will be updated to pull data from the Google Form results
+        // URLs for the JSON data (Google Apps Script web apps for each test)
+        const week1DataUrl = 'YOUR_GOOGLE_APPS_SCRIPT_URL_FOR_WEEK1';  // MODIFY THIS PART
+        const week2DataUrl = 'YOUR_GOOGLE_APPS_SCRIPT_URL_FOR_WEEK2';  // MODIFY THIS PART
+
+        // Function to fetch and display top 10 students for Week 1
+        function fetchWeek1Data() {
+            fetch(week1DataUrl)
+                .then(response => response.json())
+                .then(data => {
+                    const tbodyWeek1 = document.querySelector('#top-students-week1 tbody');
+                    tbodyWeek1.innerHTML = '';  // Clear existing rows
+                    data.forEach((student, index) => {
+                        const row = document.createElement('tr');
+                        row.innerHTML = `<td>${student.rank}</td><td>${student.name}</td><td>${student.class}</td><td>${student.score}</td>`;
+                        tbodyWeek1.appendChild(row);
+                    });
+                });
+        }
+
+        // Function to fetch and display top 10 students for Week 2
+        function fetchWeek2Data() {
+            fetch(week2DataUrl)
+                .then(response => response.json())
+                .then(data => {
+                    const tbodyWeek2 = document.querySelector('#top-students-week2 tbody');
+                    tbodyWeek2.innerHTML = '';  // Clear existing rows
+                    data.forEach((student, index) => {
+                        const row = document.createElement('tr');
+                        row.innerHTML = `<td>${student.rank}</td><td>${student.name}</td><td>${student.class}</td><td>${student.score}</td>`;
+                        tbodyWeek2.appendChild(row);
+                    });
+                });
+        }
+
+        // Fetch data when the page loads
+        fetchWeek1Data();
+        fetchWeek2Data();
     </script>
+
 </body>
 </html>
