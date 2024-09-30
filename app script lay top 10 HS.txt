@@ -1,0 +1,43 @@
+// ham lay top 10 HS tu spreadsheet
+function getTopStudents() {
+  var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+  
+  // lay du lieu tu spreadsheet (theo trinh tu cot B, C, D la diem ten lop)
+  var dataRange = sheet.getRange(2, 2, sheet.getLastRow() - 1, 3); // B2:D -> diem ten lop
+  var data = dataRange.getValues();
+  
+  // lap mang ghi diem
+  var scores = [];
+  
+  for (var i = 0; i < data.length; i++) {
+    scores.push({
+      score: data[i][0],  // Column B: diem
+      name: data[i][1],   // Column C: ten HS
+      class: data[i][2]   // Column D: lop
+    });
+  }
+  
+  // xem thu tu tu cao xuong thap
+  scores.sort(function(a, b) {
+    return b.score - a.score;
+  });
+
+  // cat top 10
+  var topStudents = scores.slice(0, 10);
+  
+  // xep hang
+  for (var j = 0; j < topStudents.length; j++) {
+    topStudents[j].rank = j + 1;
+  }
+  
+  return topStudents;  // tra ket qua
+}
+
+// ham doget de lay link web url
+function doGet() {
+  var output = getTopStudents();
+  
+  // tra ket qua duoi dang file json
+  return ContentService.createTextOutput(JSON.stringify(output))
+    .setMimeType(ContentService.MimeType.JSON);
+}
