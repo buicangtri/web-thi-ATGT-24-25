@@ -79,10 +79,10 @@
     </div>
 
     <div class="container">
-        <!-- Page Title -->
+        <!-- Tiêu đề page -->
         <h1>CUỘC THI TÌM HIỂU TRỰC TUYẾN PHÁP LUẬT VỀ AN TOÀN GIAO THÔNG</h1>
 
-        <!-- Instructions Section -->
+        <!-- Nội dung hướng dẫn thực hiện -->
         <div class="instructions">
             <h3>HƯỚNG DẪN THAM GIA CUỘC THI</h3>
             <p>1. Học sinh bấm vào nút "Tham gia thi tuần 1" hoặc "Tham gia thi tuần 2" để dự thi.</p>
@@ -92,11 +92,11 @@
 
         <!-- Google Form Links -->
         <div class="test-link">
-            <a href="link" target="_blank">Tham gia thi tuần 1</a>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfFjnZ9LwQmKxjua7ZuWF2raEyYJfjtTTvRXqV750zDpFT-9w/viewform?usp=sf_link" target="_blank">Tham gia thi tuần 2</a>
+            <a href="link" target="_blank">Tham gia thi tuần 1</a> /* chèn link google form cuộc thi tuần 1 vào trong dấu nháy/
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfFjnZ9LwQmKxjua7ZuWF2raEyYJfjtTTvRXqV750zDpFT-9w/viewform?usp=sf_link" target="_blank">Tham gia thi tuần 2</a> /* chèn link google form tuần 2 vào trong dấu nháy/
         </div>
 
-        <!-- Top 10 Students Table for Week 1 -->
+        <!-- Hiển thị danh sách top 10 HS tuần 1 -->
         <h2>10 HỌC SINH CÓ ĐIỂM SỐ CAO NHẤT TUẦN 1</h2>
         <table id="top-students-week1">
             <thead>
@@ -108,11 +108,11 @@
                 </tr>
             </thead>
             <tbody>
-                <!-- Table content will be populated by JavaScript -->
+                <!-- Nội dung bảng -->
             </tbody>
         </table>
 
-        <!-- Top 10 Students Table for Week 2 -->
+        <!-- Hiển thị danh sách top 10 HS tuần 2 -->
         <h2>10 HỌC SINH CÓ ĐIỂM SỐ CAO NHẤT TUẦN 2</h2>
         <table id="top-students-week2">
             <thead>
@@ -124,17 +124,17 @@
                 </tr>
             </thead>
             <tbody>
-                <!-- Table content will be populated by JavaScript -->
+                <!-- Nội dung bảng -->
             </tbody>
         </table>
     </div>
 
     <script>
-        // URLs for the JSON data (Google Apps Script web apps for each test)
-        const week1DataUrl = 'https://script.google.com/macros/s/AKfycbwDAxg4pXrV4zJ2QQfszA7XtQ9ewoHYDfWdVn8qXvZfLE0ypozKP5rbLzfqvkxwLTMK/exec';
-        const week2DataUrl = 'https://script.google.com/macros/s/AKfycbxtWUmNCQIl__KCqKwVD2K4r9WugDQwZZ3f0mA-TGhgIkxQF1Fyau7IQ2RTJPRi8Rd3/exec';
+        // URLs của JSON data (Google Apps Script web apps)
+        const week1DataUrl = 'https://script.google.com/macros/s/AKfycbwDAxg4pXrV4zJ2QQfszA7XtQ9ewoHYDfWdVn8qXvZfLE0ypozKP5rbLzfqvkxwLTMK/exec'; //chèn link app script trong google sheet tuần 1 vào trong dấu nháy
+        const week2DataUrl = 'https://script.google.com/macros/s/AKfycbxtWUmNCQIl__KCqKwVD2K4r9WugDQwZZ3f0mA-TGhgIkxQF1Fyau7IQ2RTJPRi8Rd3/exec'; //chèn link app script trong google sheet tuần 2 vào trong dấu nháy
 
-        // Function to fetch and display top 10 students for Week 1
+        // Hàm lấy dữ liệu top 10 HS tuần 1
         function fetchWeek1Data() {
             fetch(week1DataUrl)
                 .then(response => response.json())
@@ -149,7 +149,7 @@
                 });
         }
 
-        // Function to fetch and display top 10 students for Week 2
+        // Hàm lấy dữ liệu top 10 HS tuần 2
         function fetchWeek2Data() {
             fetch(week2DataUrl)
                 .then(response => response.json())
@@ -164,7 +164,7 @@
                 });
         }
 
-        // Fetch data when the page loads
+        // Lấy dữ liệu 
         fetchWeek1Data();
         fetchWeek2Data();
     </script>
